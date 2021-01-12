@@ -3,10 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
+# Extensions
+*.key
+
+# Config file
+config.json
 
 # Distribution / packaging
+models/
+data/
+test/
 .Python
 build/
 develop-eggs/
