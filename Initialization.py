@@ -57,12 +57,17 @@ def initialize():
     print(res)
 
     # enumerate categories
-    possible_labels = df.emotion.unique()
+    possible_labels = sorted(df.emotion.unique())
+
     label_dict = {}
     for index, possible_label in enumerate(possible_labels):
         label_dict[possible_label] = index
+
     df['label'] = df.emotion.replace(label_dict)
+
     print(df.head())
+    label_dict = dict(sorted(label_dict.items()))
     print(label_dict)
+    
     
     return df, label_dict
