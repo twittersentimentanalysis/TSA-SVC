@@ -1,0 +1,6 @@
+flask_restful==0.3.8
+matplotlib==3.4.1
+numpy==1.20.2
+pandas==1.2.4
+scikit-learn==0.24.1
+scikit-optimize==0.8.1
