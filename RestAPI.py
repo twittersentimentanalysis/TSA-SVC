@@ -54,4 +54,4 @@ api.add_resource(Emotion, '/svc/v1/emotion')
 # Main
 if __name__ == '__main__':
 	count_vect, tf_transformer, calibrated_svc, label_dict = load_data()
-	app.run(port='5000')
+	app.run(port='6232')
