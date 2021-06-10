@@ -11,7 +11,7 @@ config.json
 
 # Distribution / packaging
 TSA-SVC-env/
-models/
+models-old/
 data/
 test/
 .Python

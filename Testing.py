@@ -1,10 +1,7 @@
 import json
 import pickle
 
-from sklearn.feature_extraction.text    import TfidfTransformer, CountVectorizer
-from sklearn.preprocessing              import LabelEncoder
-from sklearn.model_selection            import train_test_split
-
+# Initialize testing data
 def initialize(df):
     X_test = df.processed_tweet.values
     y_test = df.label.values
@@ -19,7 +16,7 @@ def initialize(df):
 
     return X_test, y_test, count_vect, transformer, labels
 
-
+# Enocde data for testing
 def encode_data(X_test, y_test, count_vect, transformer, labels):
     X_test_counts = count_vect.transform(X_test)
     X_test_transformed = transformer.transform(X_test_counts)

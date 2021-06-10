@@ -1,0 +1,12 @@
+{
+    "pre-trained-model": "models/SVC-model.sav",
+    "encoded-data": "models/SVC-encoded-data.sav",
+    "label-dict": 
+    {
+        "angry": 0,
+        "happy": 1,
+        "not-relevant": 2,
+        "sad": 3,        
+        "surprise": 4
+    }
+}

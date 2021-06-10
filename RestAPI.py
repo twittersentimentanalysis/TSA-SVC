@@ -1,5 +1,5 @@
 import json
-import Main
+import pickle
 import Classifier
 
 from functools      import wraps
@@ -23,6 +23,7 @@ def require_appkey(view_function):
 			abort(401)
 	return decorated_function
 
+# Main class
 class Emotion(Resource):
 	@require_appkey
 	def post(self):
@@ -30,10 +31,27 @@ class Emotion(Resource):
 		emotions = Classifier.get_emotion(text, count_vect, tf_transformer, calibrated_svc, label_dict)
 		return emotions
 
+# Load data function
+def load_data():
+    # load configuration file
+    js = open('config.json').read()
+    config = json.loads(js)
+
+    # load model
+    model = pickle.load(open(config['pre-trained-model'], 'rb')) 
+
+    # load encoded data
+    count_vect, transformer, labels = pickle.load(open(config['encoded-data'], 'rb')) 
+
+    # load label dictionary
+    label_dict = config['label-dict']
+
+    return count_vect, transformer, model, label_dict
+
 # Routes
-api.add_resource(Emotion, '/api/v1/emotion')  
+api.add_resource(Emotion, '/svc/v1/emotion')  
 
 # Main
 if __name__ == '__main__':
-	count_vect, tf_transformer, calibrated_svc, label_dict = Main.load()
+	count_vect, tf_transformer, calibrated_svc, label_dict = load_data()
 	app.run(port='5000')
