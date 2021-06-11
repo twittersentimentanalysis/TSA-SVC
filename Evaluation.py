@@ -24,7 +24,7 @@ def find_best_params_svc(X_train_transformed, y_train_lables_trf):
     cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=10, random_state=42)
 
     # define the search
-    search = RandomizedSearchCV(estimator=SVC(break_ties=True), param_distributions=params, n_jobs=-1, cv=cv, scoring='accuracy', verbose=3, refit=True)
+    search = RandomizedSearchCV(estimator=SVC(), param_distributions=params, n_jobs=-1, cv=cv, scoring='accuracy', verbose=3, refit=True)
 
     # fitting the model for search 
     search.fit(X_train_transformed, y_train_lables_trf) 
