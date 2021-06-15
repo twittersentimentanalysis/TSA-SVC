@@ -34,7 +34,7 @@ class Emotion(Resource):
 # Load data function
 def load_data():
     # load configuration file
-    js = open('config.json').read()
+    js = open('config-api.json').read()
     config = json.loads(js)
 
     # load model
