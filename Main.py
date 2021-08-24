@@ -3,13 +3,11 @@ import Testing
 import Evaluation
 import Initialization
 
-import json
-import pickle
-
 
 def main():
     train()
     # test()
+
 
 # Function to train and test data with one dataset
 def train():

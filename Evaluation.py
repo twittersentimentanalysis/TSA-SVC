@@ -1,12 +1,10 @@
 import json
 import pickle
-import pandas   as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 from sklearn.metrics            import plot_confusion_matrix, classification_report
 from sklearn.svm                import SVC
-from sklearn.model_selection    import GridSearchCV, RandomizedSearchCV, RepeatedStratifiedKFold, StratifiedKFold
+from sklearn.model_selection    import RandomizedSearchCV, RepeatedStratifiedKFold
 
 
 # Funtion to fine-tune hyperparameters to find the optimal ones
@@ -34,6 +32,7 @@ def find_best_params_svc(X_train_transformed, y_train_lables_trf):
     print(search.best_estimator_) 
 
     return search.best_estimator_
+
 
 # Load trained model saved
 def load_model():
@@ -65,6 +64,5 @@ def evaluate_model(model, X_test, y_test, label_dict):
                             normalize = 'true')
     plt.show()
     
-    # classification report (precision, recall, f1-score, accuracy)
     cr = classification_report(y_test, y_pred, digits=5, target_names=label_dict.keys())
     print(cr)

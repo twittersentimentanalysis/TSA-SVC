@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
  
+
 # Initialize data
 def initialize():
     # load configuration file

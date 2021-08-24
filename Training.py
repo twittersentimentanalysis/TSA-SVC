@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text    import TfidfTransformer
 from sklearn.feature_extraction.text    import CountVectorizer
 from sklearn.preprocessing              import LabelEncoder
 
+
 # Prepare data for training and testing
 def initialize(df):
     # Split data into 80 % for training and 20% for testing

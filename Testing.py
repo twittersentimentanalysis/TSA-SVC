@@ -1,6 +1,7 @@
 import json
 import pickle
 
+
 # Initialize testing data
 def initialize(df):
     X_test = df.processed_tweet.values
@@ -15,6 +16,7 @@ def initialize(df):
     count_vect, transformer, labels = pickle.load(open(path, 'rb'))
 
     return X_test, y_test, count_vect, transformer, labels
+
 
 # Enocde data for testing
 def encode_data(X_test, y_test, count_vect, transformer, labels):
