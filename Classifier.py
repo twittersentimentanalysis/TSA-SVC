@@ -1,5 +1,6 @@
 import json
 
+
 # Get emotions probabilities for text recieved
 def get_emotion(text, count_vect, tf_transformer, calibrated_svc, label_dict):
     # read configuration file
