@@ -21,4 +21,12 @@ API for applying sentiment analysis using SVC (Support Vector Classifier) model.
 
 4. Make API requests
 
-    Base URL: `http://127.0.0.1:5000/api/v1/`
+    Base URL: `http://localhost:6232/svc/v1`
+
+
+## Endpoints
+### Localhost
+http://localhost:6232/svc/v1/emotion
+
+### GESSI Server
+http://gessi-sw.essi.upc.edu:6232/svc/v1/emotion
